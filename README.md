@@ -1,3 +1,17 @@
+### Quick Guide
+
+- Install docker and run `docker run -it -p 5000:5000 quay.io/codait/max-image-resolution-enhancer`
+
+- Run predictions using GUI at `http://localhost:5000/`
+- Run predictions on folder using:
+
+    ```shell
+    for file in "/path/to/folder/"*
+    do
+        curl -F "image=@${file}" -XPOST http://localhost:5000/model/predict > "${file}.out.png"
+    done
+```
+
 [![Build Status](https://travis-ci.com/IBM/MAX-Image-Resolution-Enhancer.svg?branch=master)](https://travis-ci.com/IBM/MAX-Image-Resolution-Enhancer) [![API demo](https://img.shields.io/website/http/max-image-resolution-enhancer.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud/swagger.json.svg?label=API%20demo&down_message=down&up_message=up)](http://max-image-resolution-enhancer.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud)
 
 [<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
